@@ -6,12 +6,10 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.study.entity.*;
 
 @Repository
-@Transactional
 public class DAOImpl implements DAOInterf {
 
 	@Autowired
@@ -37,7 +35,6 @@ public class DAOImpl implements DAOInterf {
 
 	@Override
 	public User getAuthorize(User user) {
-		System.out.println("CALL");
 			Query query = sessionFactory.getCurrentSession().createQuery(
 					"SELECT u FROM User u WHERE "
 							+ "u.login=:login and u.password=:password");

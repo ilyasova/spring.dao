@@ -15,7 +15,6 @@ public class ServiceImpl implements ServiceInterf {
 	private DAOInterf dAOInterf;
 
 	@Override
-	// @Transactional
 	public void addLanguage(User user, Phrases phrases) {
 		dAOInterf.addLanguage(user, phrases);
 	}
@@ -26,7 +25,6 @@ public class ServiceImpl implements ServiceInterf {
 	}
 
 	@Override
-	// @Transactional
 	public User getAuthorize(User user) {
 		return dAOInterf.getAuthorize(user);
 	}
@@ -47,19 +45,16 @@ public class ServiceImpl implements ServiceInterf {
 	}
 
 	@Override
-	// @Transactional
 	public Object save(Object obj) {
 		return dAOInterf.save(obj);
 	}
 
 	@Override
-	@Transactional
 	public Boolean updateLanguageForUser(User user, Phrases phrases) {
 		return dAOInterf.updateLanguageForUser(user, phrases);
 	}
 
 	@Override
-	// @Transactional
 	public Phrases updateNumberPhraseForUser(User user, Phrases phrases) {
 		return dAOInterf.updateNumberPhraseForUser(user, phrases);
 	}
